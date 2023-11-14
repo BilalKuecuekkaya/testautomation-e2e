@@ -38,6 +38,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Install Appium
       run: npm install -g appium
+    - name: Install UiAutomator2 Driver
+      run: appium driver install uiautomator2
     - name: Start Appium Server
       run: |
         appium --port 4724 &
