@@ -40,9 +40,7 @@ jobs:
       run: npm install -g appium
     - name: Start Appium Server
       run: |
-        appium &
+        appium --port 4724 &
         sleep 5
-    - name: Connect to Physical Device
-      run: appium --port 4723
     - name: Run Test and create report
       run: python -m robot -d reports -x junit-report.xml "Tests/prp-test-01.robot"
