@@ -41,5 +41,9 @@ jobs:
       run: npm install -g appium
     - name: Install UiAutomator2 Driver
       run: appium driver install uiautomator2
+    - name: Start Appium Server
+      run: |
+        appium --address 192.168.178.32 --port 4724 &
+        sleep 5
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/prp-test-01.robot
