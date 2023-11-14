@@ -42,4 +42,4 @@ jobs:
     - name: Install UiAutomator2 Driver
       run: appium driver install uiautomator2
     - name: Run Test and create report
-      run: python -m robot -d reports -x junit-report.xml "Tests/prp-test-01.robot"
+      run: robot -d Output --loglevel TRACE  Tests/prp-test-01.robot
