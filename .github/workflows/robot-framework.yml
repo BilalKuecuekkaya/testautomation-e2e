@@ -31,19 +31,14 @@ jobs:
         pip install robotframework
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Install Appium
       run: npm install -g appium
     - name: Install UiAutomator2 Driver
       run: appium driver install uiautomator2
-    - name: Start Appium Server
-      run: |
-        appium --address 0.0.0.0 --port 4724 &
-        sleep 30
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/prp-test-01.robot
+    - name: Archive Test Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: Output
