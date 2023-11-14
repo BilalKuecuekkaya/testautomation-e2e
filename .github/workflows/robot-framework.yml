@@ -44,6 +44,6 @@ jobs:
     - name: Start Appium Server
       run: |
         appium --address 0.0.0.0 --port 4724 --relaxed-security --base-path /wd/hub &
-        sleep 10
+        sleep 30
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/prp-test-01.robot
