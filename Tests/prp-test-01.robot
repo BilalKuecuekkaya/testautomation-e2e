@@ -1,5 +1,5 @@
 *** Settings ***
-Library   AppiumLibrary  
+| Library | AppiumLibrary | run_on_failure=AppiumLibrary.CapturePageScreenshot
 *** Variables ***
 ${WELCOME-TEXT}    //android.widget.TextView[@text="Welcome to PurplPro Mobile!"]
 ${SIGNIN-BUTTON}   //android.widget.Button[@text="Sign in"]
