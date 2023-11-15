@@ -1,6 +1,6 @@
 *** Settings ***
 Library   AppiumLibrary  
-Variables     ../.github/workflows/robot-framework.yml
+Variables     robot-framework.yml
 *** Variables ***
 ${WELCOME-TEXT}    //android.widget.TextView[@text="Welcome to PurplPro Mobile!"]
 ${SIGNIN-BUTTON}   //android.widget.Button[@text="Sign in"]
