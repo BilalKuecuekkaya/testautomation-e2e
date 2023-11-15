@@ -37,6 +37,8 @@ jobs:
       run: appium driver install uiautomator2
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/prp-test-01.robot
+      env:
+        HTTP_DEVICE:  ${{ secrets.HTTP_DEVICE }}
     - name: Archive Test Results
       uses: actions/upload-artifact@v2
       with:
