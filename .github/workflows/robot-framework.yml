@@ -36,6 +36,8 @@ jobs:
     - name: Install UiAutomator2 Driver
       run: appium driver install uiautomator2
     - name: Run Test and create report
+      env:
+        HTTP_DEVICE:  ${{ secrets.HTTP_DEVICE }}
       run: robot -d Output --loglevel TRACE  Tests/Login.robot
       
     - name: Archive Test Results
@@ -43,5 +45,4 @@ jobs:
       with:
         name: test-results
         path: Output
-env:
-  HTTP_DEVICE:  ${{ secrets.HTTP_DEVICE }}
+
