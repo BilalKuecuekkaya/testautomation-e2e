@@ -37,10 +37,11 @@ jobs:
       run: appium driver install uiautomator2
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/Login.robot
-      env:
-        HTTP_DEVICE:  ${{ secrets.HTTP_DEVICE }}
+      
     - name: Archive Test Results
       uses: actions/upload-artifact@v2
       with:
         name: test-results
         path: Output
+env:
+        HTTP_DEVICE:  ${{ secrets.HTTP_DEVICE }}
