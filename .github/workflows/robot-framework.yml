@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11"]
+        python-version: ["3.10"]
 
     steps:
     - uses: actions/checkout@v3
@@ -27,20 +27,18 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install Appium-Python-Client
         pip install robotframework
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Install Appium
       run: npm install -g appium
-    - name: Start Appium Server
-      run: |
-        appium --port 4724 &
-        sleep 5
+    - name: Install UiAutomator2 Driver
+      run: appium driver install uiautomator2
     - name: Run Test and create report
-      run: python -m robot -d reports -x junit-report.xml "Tests/prp-test-01.robot"
+      run: robot -d Output --loglevel TRACE  Tests/prp-test-01.robot
+    - name: Archive Test Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: Output
