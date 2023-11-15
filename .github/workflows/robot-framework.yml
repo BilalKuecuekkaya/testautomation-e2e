@@ -36,7 +36,7 @@ jobs:
     - name: Install UiAutomator2 Driver
       run: appium driver install uiautomator2
     - name: Run Test and create report
-      run: robot -d Output --loglevel TRACE  Tests/prp-test-01.robot
+      run: robot -d Output --loglevel TRACE  Tests/Login.robot
       env:
         HTTP_DEVICE:  ${{ secrets.HTTP_DEVICE }}
     - name: Archive Test Results
