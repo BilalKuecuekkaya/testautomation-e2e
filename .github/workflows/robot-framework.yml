@@ -26,6 +26,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
+        pvd
+        ls -a
         python -m pip install --upgrade pip
         pip install Appium-Python-Client
         pip install robotframework
