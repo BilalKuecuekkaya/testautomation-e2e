@@ -7,7 +7,6 @@ ${SIGNIN-BUTTON}   //android.widget.Button[@text="Sign in"]
 
 ${ACCOUNT}        //android.widget.Button[@text='Melden Sie sich mit dem Geschäfts-, Schul- oder Unikonto "bilal.kuecuekkaya@spectralengines.com" an.']
 ${KENNWORT}       //android.widget.EditText
-${HTTP_DEVICE}     ${HTTP_DEVICE}
 *** Test Cases ***
 Open_Application    
     Open Application    ${HTTP_DEVICE}     platformName=Android	    deviceName=RF8T90V5A7H    appPackage=com.purplepro.app   appActivity=com.purplepro.app.MainActivity     automationName=Uiautomator2   
