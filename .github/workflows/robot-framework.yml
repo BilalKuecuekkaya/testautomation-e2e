@@ -29,6 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install Appium-Python-Client
         pip install robotframework
+        pip install PyYAML
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install Appium
@@ -37,8 +38,10 @@ jobs:
       run: appium driver install uiautomator2
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/Login.robot
+
     - name: Archive Test Results
       uses: actions/upload-artifact@v2
       with:
         name: test-results
         path: Output
+
