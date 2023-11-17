@@ -8,7 +8,7 @@ ${SIGNIN-BUTTON}   //android.widget.Button[@text="Sign in"]
 
 ${ACCOUNT}        //android.widget.Button[@text='Melden Sie sich mit dem Geschäfts-, Schul- oder Unikonto "bilal.kuecuekkaya@spectralengines.com" an.']
 ${KENNWORT}       //android.widget.EditText
-Log    message is login-file ${{HTTP_DEVICE}}
+Documentation     ${{HTTP_DEVICE}}
 
 *** Test Cases ***
 Open_Application    
