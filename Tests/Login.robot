@@ -10,7 +10,7 @@ ${KENNWORT}       //android.widget.EditText
 
 *** Test Cases ***
 Open_Application    
-    Open Application    ${{ HTTP_DEVICE }}       platformName=Android	    deviceName=RF8T90V5A7H    appPackage=com.purplepro.app   appActivity=com.purplepro.app.MainActivity     automationName=Uiautomator2   
+    Open Application    http://84.162.64.55:4724     platformName=Android	    deviceName=RF8T90V5A7H    appPackage=com.purplepro.app   appActivity=com.purplepro.app.MainActivity     automationName=Uiautomator2   
 
     #Wait Until Page Contains  ${WELCOME-TEXT}
     Wait Until Page Contains Element    ${SIGNIN-BUTTON}
