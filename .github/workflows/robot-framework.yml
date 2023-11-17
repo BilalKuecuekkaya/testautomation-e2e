@@ -41,7 +41,7 @@ jobs:
 
     - name: Run Test and create report
       run: |
-        ${{ env.HTTP_DEVICE }}  robot -d Output --loglevel TRACE  Tests/Login.robot
+        ${{ secrets.HTTP_DEVICE }}  robot -d Output --loglevel TRACE  Tests/Login.robot
     
       
     - name: Archive Test Results
