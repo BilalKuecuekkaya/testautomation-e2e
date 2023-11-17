@@ -1,5 +1,6 @@
 *** Settings ***
 Library   AppiumLibrary  
+Documentation    Login file entered
 Variables    ../.github/workflows/robot-framework.yml
 *** Variables ***
 ${WELCOME-TEXT}    //android.widget.TextView[@text="Welcome to PurplPro Mobile!"]
