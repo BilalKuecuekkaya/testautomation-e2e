@@ -1,8 +1,9 @@
+
+
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 name: Robot Framework CI
-
 on:
   push:
     branches: [ "master" ]
@@ -36,7 +37,11 @@ jobs:
     - name: Install UiAutomator2 Driver
       run: appium driver install uiautomator2
     - name: Run Test and create report
-      run: robot -d Output --loglevel TRACE  Tests/Login.robot
+      run: |
+        robot -v URL:${{ secrets.HTTP_DEVICE }} -d Output --loglevel TRACE Tests/Login.robot
+      env:
+        HTTP_DEVICE: ${{ secrets.HTTP_DEVICE }}
+    
     - name: Archive Test Results
       uses: actions/upload-artifact@v2
       with:
