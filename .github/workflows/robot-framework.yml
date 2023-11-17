@@ -30,14 +30,11 @@ jobs:
         pip install Appium-Python-Client
         pip install robotframework
         pip install PyYAML
-        adb uninstall io.appium.uiautomator2.server
-        adb uninstall io.appium.uiautomator2.server.test
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install Appium
       run: npm install -g appium
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/Login.robot
-
     - name: Archive Test Results
       uses: actions/upload-artifact@v2
       with:
