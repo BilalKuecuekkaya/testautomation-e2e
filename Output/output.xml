@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231117 14:41:31.730" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.5 on win32)" generated="20231117 17:36:12.396" rpa="false" schemaversion="4">
 <suite id="s1" name="Login" source="C:\Users\BKU.SE\Desktop\SpectralEngines\Testing\Testautomation\testautomation-e2e\Tests\Login.robot">
-<test id="s1-t1" name="Open_Application" line="13">
-<kw name="Log" library="BuiltIn">
-<arg>This is the file ${HTTP_DEVICE}</arg>
-<arg>console=true</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20231117 14:41:31.872" level="TRACE">Arguments: [ 'This is the file ${{ secrets.HTTP_DEVICE }}' | console=True ]</msg>
-<msg timestamp="20231117 14:41:31.872" level="INFO">This is the file ${{ secrets.HTTP_DEVICE }}</msg>
-<msg timestamp="20231117 14:41:31.872" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
-</kw>
+<test id="s1-t1" name="Open_Application" line="12">
 <kw name="Open Application" library="AppiumLibrary">
-<arg>${{ HTTP_DEVICE }}</arg>
+<arg>http://84.162.64.55:4724</arg>
 <arg>platformName=Android</arg>
 <arg>deviceName=RF8T90V5A7H</arg>
 <arg>appPackage=com.purplepro.app</arg>
@@ -25,58 +16,246 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<msg timestamp="20231117 14:41:31.872" level="FAIL">Resolving variable '${{ HTTP_DEVICE }}' failed: Evaluating expression 'HTTP_DEVICE' failed: NameError: name 'HTTP_DEVICE' is not defined nor importable as module</msg>
-<status status="FAIL" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<msg timestamp="20231117 17:36:12.530" level="TRACE">Arguments: [ 'http://84.162.64.55:4724' | platformName='Android' | deviceName='RF8T90V5A7H' | appPackage='com.purplepro.app' | appActivity='com.purplepro.app.MainActivity' | automationName='Uiautomator2' ]</msg>
+<msg timestamp="20231117 17:36:12.530" level="DEBUG">POST http://84.162.64.55:4724/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"platformName": "Android", "appium:deviceName": "RF8T90V5A7H", "appium:appPackage": "com.purplepro.app", "appium:appActivity": "com.purplepro.app.MainActivity", "appium:automationName": "Uiautomator2"}}}</msg>
+<msg timestamp="20231117 17:36:12.563" level="DEBUG">Starting new HTTP connection (1): 84.162.64.55:4724</msg>
+<msg timestamp="20231117 17:36:20.344" level="DEBUG">http://84.162.64.55:4724 "POST /session HTTP/1.1" 200 0</msg>
+<msg timestamp="20231117 17:36:20.345" level="DEBUG">Remote response: status=200 | data={"value":{"capabilities":{"platformName":"Android","deviceName":"RF8T90V5A7H","appPackage":"com.purplepro.app","appActivity":"com.purplepro.app.MainActivity","automationName":"Uiautomator2","platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","deviceName":"RF8T90V5A7H","appPackage":"com.purplepro.app","appActivity":"com.purplepro.app.MainActivity","automationName":"Uiautomator2"},"deviceUDID":"RF8T90V5A7H","pixelRatio":"2.625","statBarHeight":78,"viewportRect":{"left":0,"top":78,"width":1080,"height":2116},"deviceApiLevel":33,"platformVersion":"13","deviceManufacturer":"samsung","deviceModel":"SM-A325F","deviceScreenSize":"1080x2400","deviceScreenDensity":420},"sessionId":"8f087624-8102-4c17-ae4b-02f368a9fe68"}} | headers=HTTPHeaderDict({'X-Powered-By': 'Express', 'Vary': 'X-HTTP-Method-Override', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '898', 'ETag': 'W/"382-TjHEbrBEJj1MWKCcZE7RM3++ijw"', 'Date': 'Fri, 17 Nov 2023 16:36:20 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=600'})</msg>
+<msg timestamp="20231117 17:36:20.345" level="DEBUG">Finished Request</msg>
+<msg timestamp="20231117 17:36:20.345" level="DEBUG">Opened application with session id 8f087624-8102-4c17-ae4b-02f368a9fe68</msg>
+<msg timestamp="20231117 17:36:20.345" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20231117 17:36:12.530" endtime="20231117 17:36:20.345"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>${SIGNIN-BUTTON}</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<msg timestamp="20231117 17:36:20.345" level="TRACE">Arguments: [ '//android.widget.Button[@text="Sign in"]' ]</msg>
+<msg timestamp="20231117 17:36:20.345" level="DEBUG">POST http://84.162.64.55:4724/session/8f087624-8102-4c17-ae4b-02f368a9fe68/elements {"using": "xpath", "value": "//android.widget.Button[@text=\"Sign in\"]"}</msg>
+<msg timestamp="20231117 17:36:20.381" level="DEBUG">http://84.162.64.55:4724 "POST /session/8f087624-8102-4c17-ae4b-02f368a9fe68/elements HTTP/1.1" 500 0</msg>
+<msg timestamp="20231117 17:36:20.381" level="DEBUG">Remote response: status=500 | data={"value":{"error":"unknown error","message":"An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up","stacktrace":"UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up\n    at UIA2Proxy.command (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\@appium\\base-driver\\lib\\jsonwp-proxy\\proxy.js:355:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at AndroidUiautomator2Driver.doFindElementOrEls (C:\\Users\\BKU.SE\\.appium\\node_modules\\appium-uiautomator2-driver\\lib\\commands\\find.js:44:7)\n    at doFind (C:\\Users\\BKU.SE\\.appium\\node_modules\\appium-uiautomator2-driver\\node_modules\\appium-android-driver\\lib\\commands\\find.ts:48:17)\n    at wrappedCondFn (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\@appium\\base-driver\\lib\\basedriver\\commands\\timeout.ts:137:14)\n    at spin (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\asyncbox\\lib\\asyncbox.js:219:20)\n    at waitForCondition (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\asyncbox\\lib\\asyncbox.js:236:10)\n    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\@appium\\base-driver\\lib\\basedriver\\commands\\timeout.ts:139:12)\n    at AndroidUiautomator2Driver.findElOrEls (C:\\Users\\BKU.SE\\.appium\\node_modules\\appium-uiautomator2-driver\\node_modules\\appium-android-driver\\lib\\commands\\find.ts:71:5)\n    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\@appium\\base-driver\\lib\\basedriver\\commands\\find.ts:60:12)\n    at AndroidUiautomator2Driver.findElements (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\@appium\\base-driver\\lib\\basedriver\\commands\\find.ts:79:12)"}} | headers=HTTPHeaderDict({'X-Powered-By': 'Express', 'Vary': 'X-HTTP-Method-Override', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2159', 'ETag': 'W/"86f-4Jx187MK8ouSvkemV/Ljk9CUIbw"', 'Date': 'Fri, 17 Nov 2023 16:36:20 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=600'})</msg>
+<msg timestamp="20231117 17:36:20.381" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20231117 17:36:20.381" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20231117 17:36:20.381" level="DEBUG">GET http://84.162.64.55:4724/session/8f087624-8102-4c17-ae4b-02f368a9fe68/screenshot {}</msg>
+<msg timestamp="20231117 17:36:20.430" level="DEBUG">http://84.162.64.55:4724 "GET /session/8f087624-8102-4c17-ae4b-02f368a9fe68/screenshot HTTP/1.1" 500 0</msg>
+<msg timestamp="20231117 17:36:20.430" level="DEBUG">Remote response: status=500 | data={"value":{"error":"unknown error","message":"An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up","stacktrace":"UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up\n    at UIA2Proxy.command (C:\\Users\\BKU.SE\\AppData\\Roaming\\npm\\node_modules\\appium\\node_modules\\@appium\\base-driver\\lib\\jsonwp-proxy\\proxy.js:355:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at AndroidUiautomator2Driver.getScreenshot (C:\\Users\\BKU.SE\\.appium\\node_modules\\appium-uiautomator2-driver\\lib\\commands\\screenshot.js:27:7)"}} | headers=HTTPHeaderDict({'X-Powered-By': 'Express', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '790', 'ETag': 'W/"316-VJd88yQWOut2DMAs1/tMZNv6j1s"', 'Date': 'Fri, 17 Nov 2023 16:36:20 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=600'})</msg>
+<msg timestamp="20231117 17:36:20.430" level="DEBUG">Finished Request</msg>
+<msg timestamp="20231117 17:36:20.430" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.getScreenshot (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:27:7)</msg>
+<msg timestamp="20231117 17:36:20.437" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 88, in wait_until_page_contains_element
+    self._wait_until(timeout, error, self._is_element_present, locator)
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 122, in _wait_until
+    self._wait_until_no_error(timeout, wait_func)
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 128, in _wait_until_no_error
+    timeout_error = wait_func(*args)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 120, in wait_func
+    return None if function(*args) else error
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_element.py", line 686, in _is_element_present
+    elements = self._element_finder.find(application, locator, None)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\locators\elementfinder.py", line 40, in find
+    return strategy(application, criteria, tag, constraints)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\locators\elementfinder.py", line 155, in _find_by_default
+    return self._find_by_xpath(application, criteria, tag, constraints)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\locators\elementfinder.py", line 63, in _find_by_xpath
+    application.find_elements(by=AppiumBy.XPATH, value=criteria),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\appium\webdriver\webdriver.py", line 417, in find_elements
+    return self.execute(RemoteCommand.FIND_ELEMENTS, {'using': by, 'value': value})['value'] or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\appium\webdriver\errorhandler.py", line 125, in check_response
+    raise exception_class(msg=message, stacktrace=format_stacktrace(stacktrace))
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:44:7)
+    at doFind (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:48:17)
+    at wrappedCondFn (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:137:14)
+    at spin (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:219:20)
+    at waitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:236:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:139:12)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:71:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:79:12)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_screenshot.py", line 34, in capture_page_screenshot
+    base64_screenshot = self._current_application().get_screenshot_as_base64()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 849, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\appium\webdriver\errorhandler.py", line 125, in check_response
+    raise exception_class(msg=message, stacktrace=format_stacktrace(stacktrace))
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.getScreenshot (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:27:7)</msg>
+<status status="FAIL" starttime="20231117 17:36:20.381" endtime="20231117 17:36:20.437"/>
+</kw>
+<msg timestamp="20231117 17:36:20.438" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.getScreenshot (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:27:7)</msg>
+<msg timestamp="20231117 17:36:20.439" level="INFO">xpath criteria: //android.widget.Button[@text="Sign in"]</msg>
+<msg timestamp="20231117 17:36:20.439" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:44:7)
+    at doFind (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:48:17)
+    at wrappedCondFn (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:137:14)
+    at spin (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:219:20)
+    at waitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:236:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:139:12)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:71:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:79:12)</msg>
+<msg timestamp="20231117 17:36:20.440" level="DEBUG">Traceback (most recent call last):
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 21, in _run_on_failure_decorator
+    raise err
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\keywordgroup.py", line 16, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 88, in wait_until_page_contains_element
+    self._wait_until(timeout, error, self._is_element_present, locator)
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 122, in _wait_until
+    self._wait_until_no_error(timeout, wait_func)
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 128, in _wait_until_no_error
+    timeout_error = wait_func(*args)
+                    ^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_waiting.py", line 120, in wait_func
+    return None if function(*args) else error
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\keywords\_element.py", line 686, in _is_element_present
+    elements = self._element_finder.find(application, locator, None)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\locators\elementfinder.py", line 40, in find
+    return strategy(application, criteria, tag, constraints)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\locators\elementfinder.py", line 155, in _find_by_default
+    return self._find_by_xpath(application, criteria, tag, constraints)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\AppiumLibrary\locators\elementfinder.py", line 63, in _find_by_xpath
+    application.find_elements(by=AppiumBy.XPATH, value=criteria),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\appium\webdriver\webdriver.py", line 417, in find_elements
+    return self.execute(RemoteCommand.FIND_ELEMENTS, {'using': by, 'value': value})['value'] or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\BKU.SE\AppData\Local\Programs\Python\Python311\Lib\site-packages\appium\webdriver\errorhandler.py", line 125, in check_response
+    raise exception_class(msg=message, stacktrace=format_stacktrace(stacktrace))
+selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:44:7)
+    at doFind (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:48:17)
+    at wrappedCondFn (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:137:14)
+    at spin (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:219:20)
+    at waitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:236:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:139:12)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:71:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:79:12)</msg>
+<status status="FAIL" starttime="20231117 17:36:20.345" endtime="20231117 17:36:20.440"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${SIGNIN-BUTTON}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.440" endtime="20231117 17:36:20.440"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.440" endtime="20231117 17:36:20.441"/>
 </kw>
 <kw name="Wait Until Page Contains" library="AppiumLibrary">
 <arg>text=Konto auswählen</arg>
 <doc>Waits until `text` appears on current page.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.441" endtime="20231117 17:36:20.441"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.441" endtime="20231117 17:36:20.441"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${ACCOUNT}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.441" endtime="20231117 17:36:20.441"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="AppiumLibrary">
 <arg>//android.widget.TextView[@text="Kennwort eingeben"]</arg>
 <doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.441" endtime="20231117 17:36:20.441"/>
 </kw>
 <kw name="Click Element" library="AppiumLibrary">
 <arg>${KENNWORT}</arg>
 <doc>Click element identified by `locator`.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.441" endtime="20231117 17:36:20.441"/>
 </kw>
 <kw name="Input Text" library="AppiumLibrary">
 <arg>${KENNWORT}</arg>
 <arg>text=123456</arg>
 <doc>Types the given `text` into text field identified by `locator`.</doc>
-<status status="NOT RUN" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872"/>
+<status status="NOT RUN" starttime="20231117 17:36:20.441" endtime="20231117 17:36:20.441"/>
 </kw>
-<status status="FAIL" starttime="20231117 14:41:31.872" endtime="20231117 14:41:31.872">Resolving variable '${{ HTTP_DEVICE }}' failed: Evaluating expression 'HTTP_DEVICE' failed: NameError: name 'HTTP_DEVICE' is not defined nor importable as module</status>
+<status status="FAIL" starttime="20231117 17:36:12.530" endtime="20231117 17:36:20.441">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.doFindElementOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\find.js:44:7)
+    at doFind (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:48:17)
+    at wrappedCondFn (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:137:14)
+    at spin (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:219:20)
+    at waitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\asyncbox\lib\asyncbox.js:236:10)
+    at AndroidUiautomator2Driver.implicitWaitForCondition (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\timeout.ts:139:12)
+    at AndroidUiautomator2Driver.findElOrEls (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\node_modules\appium-android-driver\lib\commands\find.ts:71:5)
+    at AndroidUiautomator2Driver.findElOrElsWithProcessing (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:60:12)
+    at AndroidUiautomator2Driver.findElements (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\basedriver\commands\find.ts:79:12)</status>
 </test>
-<status status="FAIL" starttime="20231117 14:41:31.731" endtime="20231117 14:41:31.872"/>
+<status status="FAIL" starttime="20231117 17:36:12.396" endtime="20231117 17:36:20.443"/>
 </suite>
 <statistics>
 <total>
@@ -89,5 +268,11 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20231117 17:36:20.438" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Stacktrace:
+UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+    at UIA2Proxy.command (C:\Users\BKU.SE\AppData\Roaming\npm\node_modules\appium\node_modules\@appium\base-driver\lib\jsonwp-proxy\proxy.js:355:13)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at AndroidUiautomator2Driver.getScreenshot (C:\Users\BKU.SE\.appium\node_modules\appium-uiautomator2-driver\lib\commands\screenshot.js:27:7)</msg>
 </errors>
 </robot>
