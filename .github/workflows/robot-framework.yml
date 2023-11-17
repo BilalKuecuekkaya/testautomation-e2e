@@ -41,7 +41,7 @@ jobs:
 
     - name: Run Test and create report
       run: |
-          robot -d Output --loglevel TRACE  Tests/Login.robot
+          robot -v URL:http://www.google.de -d Output --loglevel TRACE  Tests/Login.robot
     
       
     - name: Archive Test Results
