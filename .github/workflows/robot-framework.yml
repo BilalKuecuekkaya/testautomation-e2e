@@ -35,8 +35,6 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Install Appium
       run: npm install -g appium
-    - name: Install UiAutomator2 Driver
-      run: appium driver install uiautomator2
     - name: Run Test and create report
       run: robot -d Output --loglevel TRACE  Tests/Login.robot
 
