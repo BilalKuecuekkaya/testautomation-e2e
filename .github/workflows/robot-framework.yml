@@ -37,11 +37,11 @@ jobs:
     - name: Install UiAutomator2 Driver
       run: appium driver install uiautomator2
     - name: Set HTTP_DEVICE
-      run: echo "HTTP_DEVICE=${{ secrets.HTTP_DEVICE }}" >> $GITHUB_ENV
+      run: echo "HTTP_DEVICE=${{ env.HTTP_DEVICE }}" >> $GITHUB_ENV
 
     - name: Run Test and create report
       run: |
-        ${{ secrets.HTTP_DEVICE }}  robot -d Output --loglevel TRACE  Tests/Login.robot
+        ${{ env.HTTP_DEVICE }}  robot -d Output --loglevel TRACE  Tests/Login.robot
     
       
     - name: Archive Test Results
