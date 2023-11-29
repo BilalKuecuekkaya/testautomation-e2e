@@ -1,16 +1,12 @@
 *** Settings ***
 Library    AppiumLibrary
+Resource    ../Resources/Keywords.robot
 
 *** Variables ***
 
-###Device, HTTP and App Information
-${TST_APP_PACKAGE}       com.purplepro.app.tst
-${DEVICE_UDID}       RF8T90V5A7H 
-${HTTP}    http://84.162.64.55:4724
-
 ###Firebase-App-Steps
-${SIGN-IN-WITH-GOOOGLE}    //android.widget.Button[@resource-id='dev.firebase.appdistribution:id/signInButton']
-${Text-Account}        //android.widget.TextView[@text="Konto auswählen"]
+${SIGN-IN-WITH-GOOOGLE}       //android.widget.Button[@resource-id='dev.firebase.appdistribution:id/signInButton']
+${Text-Account}           //android.widget.TextView[@text="Konto auswählen"]
 ${CHOOSE-ACCOUNT-TO-LOGIN}    //android.widget.TextView[@text="bilal.kuecuekkaya@spectralengines.com"]
 ${Text-Apps-testen}    //android.widget.TextView[@resource-id='dev.firebase.appdistribution:id/test_apps_label']
 ${CHOOSE-APP-ENV}    //android.view.ViewGroup[@resource-id='dev.firebase.appdistribution:id/row' and @index='1' ]
@@ -23,26 +19,9 @@ ${Notification-To-Allow-App}    //android.widget.Button[@text="Zulassen"]
 ${INSTALL-BUTTON}    //android.widget.Button[@text="Installieren"]
 
 
-
-*** Keywords ***
-
-Check existing TST-APP and uninstall
-    Open Application    ${HTTP}    platformName=Android	    deviceName=${DEVICE_UDID}        automationName=Uiautomator2  
-    
-    ${app_installed}=    Run Keyword And Return Status    Open Application    ${HTTP}   platformName=Android    deviceName=${DEVICE_UDID}    appPackage=${TST_APP_PACKAGE}  
-    Log    ${app_installed}    console=true
-    Run Keyword If    ${app_installed}    Remove Application    ${TST_APP_PACKAGE}
-    Log    ${app_installed}    console=true
-    Remove Application    ${TST_APP_PACKAGE}
-    Log    ${app_installed}    console=true
-    Run Keyword If    '${app_installed}'== 'False'    Log    App is not installed
-    Log    ${app_installed}    console=true
-    
-    
-    
-
+*** Test Cases ***
 Check and Download latest STG Build Version
-    Open Application    ${HTTP}    platformName=Android	    deviceName=${DEVICE_UDID}    appPackage=dev.firebase.appdistribution    appActivity=dev.firebase.appdistribution.main.MainActivity    automationName=Uiautomator2
+    OpenApplication    ${HTTP}    platformName=Android	    deviceName=${DEVICE_UDID}    appPackage=dev.firebase.appdistribution    appActivity=dev.firebase.appdistribution.main.MainActivity    automationName=Uiautomator2
     Wait Until Page Contains Element    	${SIGN-IN-WITH-GOOOGLE}
     Click Element    ${SIGN-IN-WITH-GOOOGLE}
     Wait Until Page Contains Element    ${Text-Account}
@@ -64,10 +43,3 @@ Check and Download latest STG Build Version
     Wait Until Page Contains Element    ${INSTALL-BUTTON}
     Click Element    ${INSTALL-BUTTON}
     Sleep    10
-
-
-*** Test Cases ***
-
-Check TST-App, Uninstall and Install Latest STG-Build
-    Check existing TST-APP and uninstall
-    Check and Download latest STG Build Version
