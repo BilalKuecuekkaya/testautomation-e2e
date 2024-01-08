@@ -1,0 +1,25 @@
+name: Postman Tests CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Node.js and Newman
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+    - name: Run Postman Test
+      run: |
+        npm install -g newman
+        newman run https://api.postman.com/collections/29547778-2945e5f1-8380-4fda-a483-e85b6b34a11f?access_key=PMAT-01HKM3Z6T1W78P2Y79525Q96AC
+      env:
+        POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}  # You can use environment variables for any required secrets
